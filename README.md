@@ -17,10 +17,10 @@ integrado. O site também permitirá reservas diretas e fornecerá informações
 
 1. **Reservas:** Oferece datas para reserva, regras, fotos dos quartos, segurança na informação de dados do cartão.
 2. **Contato:** Mapa, dados de contato, WhatsApp, acesso às reservas.
-3. **Café da Manhã:** Fotos e breve descrição.
-4. **Acomodações:** Fotos e breve descrição.
+3. **Café da Manhã:** Fotos e breve descrição,  acesso às reservas.
+4. **Acomodações:** Fotos e breve descrição,  acesso às reservas.
 5. **Página Principal:** Depoimentos de hóspedes, informações da pousada, vídeos das acomodações, serviços oferecidos e
-   razões para se hospedar na pousada.
+   razões para se hospedar na pousada,  acesso às reservas.
 6. **Blog** (opcional): Notícias locais, festas, festivais, locais a visitar, eventos ecológicos, campeonatos, locais
    para surfar, mergulhos, entre outros.
 
