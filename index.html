@@ -1,84 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pousada Barra Grande</title>
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-    
-  </head>
 
-  <body>
-    <nav>
-      <ul>
-        <li><a href="./">Página Principal</a></li>
-        <li><a href="reservas.html">Reservas</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="cafe.html">Café da Manhã</a></li>
-        <li><a href="acomodacoes.html">Acomodações</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-    </nav>
-    <section>
-      <! video
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pousada Barra Grande</title>
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 
-    </section>
-    <section>
+</head>
 
-      <h2>Pousada xxx</h2>
-      <h1>Experiencia Inesquecivel</h1>
-      <div class="experiencia">
-        <p >Prepare-se para ter uma experiência com a natureza,conforto de cidade, em um ambiente familiar agradável. <br> <br> <strong>Memórias inesquecíveis</strong> são criadas neste cenário tropical. <br> <br> A pousada xxx esta localizada, a apenas 1 km da praia famosa da Peninsula de Marau, Taipu de Fora, com suas piscinas naturais, areia branca e agua transparente. </p>
-      
-      <img src="img/piscina/WhatsApp Image 2023-09-13 at 21.28.57 (1)redimensionada 400.png" alt="Piscina Pousada">
-      <img src="img/praia/WhatsApp Image 2020-08-25 at 17.30.30pordo sol1400red.png" alt="Praia Ponta do Muta">
-      </div>
-      
-    </section>
+<body>
+  <nav>
+    <ul>
+      <li><a href="./">Página Principal</a></li>
+      <li><a href="reservas.html">Reservas</a></li>
+      <li><a href="contato.html">Contato</a></li>
+      <li><a href="cafe.html">Café da Manhã</a></li>
+      <li><a href="acomodacoes.html">Acomodações</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </nav>
+  <section>
 
-    <section id="reservas">
-      <h1>Reservas</h1>
-      <p>
-        Oferece datas para reserva, regras, fotos dos quartos, segurança na
-        informação de dados do cartão.
+    <h2>Pousada xxx</h2>
+    <h1>Experiencia Inesquecivel</h1>
+    <div class="experiencia">
+      <p>Prepare-se para ter uma experiência com a natureza,conforto de cidade, em um ambiente familiar agradável.
+        <br> <br> <strong>Memórias inesquecíveis</strong> são criadas neste cenário tropical. <br> <br> A pousada
+        xxx esta localizada, a apenas 1 km da praia famosa da Peninsula de Marau, Taipu de Fora, com suas piscinas
+        naturais, areia branca e agua transparente.
       </p>
-    </section>
 
-    <section id="contato">
-      <h1>Contato</h1>
-      <p>Mapa, dados de contato, WhatsApp, acesso às reservas.</p>
-    </section>
+      <img src="img/piscina/WhatsApp Image 2023-09-13 at 21.28.57 (1).jpeg" alt="Piscina Pousada">
+      <img src="img/praia/WhatsApp Image 2020-08-25 at 17.30.30.jpeg" alt="Praia Ponta do Muta">
+    </div>
 
-    <section id="cafe">
-      <h1>Café da Manhã</h1>
-      <p>Fotos e breve descrição.</p>
-    </section>
+  </section>
 
-    <section id="acomodacoes">
-      <h1>Acomodações</h1>
-      <p>Fotos e breve descrição.</p>
-    </section>
+  <section id="reservas">
+    <h1>Reservas</h1>
+    <p>
+      Oferece datas para reserva, regras, fotos dos quartos, segurança na
+      informação de dados do cartão.
+    </p>
+    <div class="reservas">
+      <form action="/reserva_page.php" method="post">
+        <fieldset>
+          <legend>Formulário de Reservas</legend>
+          <!-- Check in e Check out -->
+          <!-- Data with place holder -->
+          <label for="CheckIn">Check in</label>
+          <input type="date" id="CheckIn" name="CheckIn" /></br>
+          <label for="CheckOut">Check out</label>
+          <input type="date" id="CheckOut" name="CheckOut" /></br>
+          <!-- Botão reservar -->
+          <input type="submit" value="Reservar" />
+        </fieldset>
+      </form>
+    </div>
+  </section>
 
-    <section id="principal">
-      <h1>Página Principal</h1>
-      <p>
-        Depoimentos de hóspedes, informações da pousada, vídeos das acomodações,
-        serviços oferecidos e razões para se hospedar na pousada.
-      </p>
-    </section>
+  <section id="contato">
+    <h1>Contato</h1>
+    <p>Mapa, dados de contato, WhatsApp, acesso às reservas.</p>
+  </section>
 
-    <section id="blog">
-      <h1>Blog</h1>
-      <p>
-        Notícias locais, festas, festivais, locais a visitar, eventos
-        ecológicos, campeonatos, locais para surfar, mergulhos, entre outros.
-      </p>
-    </section>
+  <section id="cafe">
+    <h1>Café da Manhã</h1>
+    <p>Fotos e breve descrição.</p>
+  </section>
 
-    <footer>
-      <p>© 2023 Pousada Barra Grande. Todos os direitos reservados.</p>
-      <p>Tradutor: Português | Inglês | Alemão</p>
-    </footer>
-  </body>
+  <section id="acomodacoes">
+    <h1>Acomodações</h1>
+    <p>Fotos e breve descrição.</p>
+  </section>
+
+  <section id="principal">
+    <h1>Página Principal</h1>
+    <p>
+      Depoimentos de hóspedes, informações da pousada, vídeos das acomodações,
+      serviços oferecidos e razões para se hospedar na pousada.
+    </p>
+  </section>
+
+  <section id="blog">
+    <h1>Blog</h1>
+    <p>
+      Notícias locais, festas, festivais, locais a visitar, eventos
+      ecológicos, campeonatos, locais para surfar, mergulhos, entre outros.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2023 Pousada Barra Grande. Todos os direitos reservados.</p>
+    <p>Tradutor: Português | Inglês | Alemão</p>
+  </footer>
+</body>
+
 </html>

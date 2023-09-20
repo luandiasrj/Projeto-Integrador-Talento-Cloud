@@ -1,16 +1,17 @@
-
-
 /* Estilos básicos para responsividade e acessibilidade */
 body {
- /* font-family: Arial, sans-serif;*/
+  /* font-family: Arial, sans-serif;*/
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  background-color: rgb(255, 242, 225);
 }
+
 h1 {
   font-family: 'Libre Baskerville', serif;
   color: #8B704B;
 }
+
 nav ul {
   list-style-type: none;
   padding: 0;
@@ -21,10 +22,11 @@ nav ul {
 nav li {
   margin: 5px;
 }
+
 /* pagina principal - topico experiencia*/
 div.experiencia {
-  
-  display: flex;
+  /* display: flex; */
+  display: block;
 }
 
 footer {
@@ -35,4 +37,44 @@ footer {
 
 section {
   padding: 20px;
+}
+
+img {
+  width: 25%;
+
+}
+
+/* class reserva */
+.reservas {
+  background-color: #fffee9;
+  padding: 20px;
+  width: 30%;
+  font-family: 'Georgia, Times, Times New Roman, serif';
+}
+
+.reservas fieldset {
+  border: 0px;
+}
+
+.reservas legend {
+  font-size: large;
+}
+
+.reservas label {
+  display: block;
+  margin-top: 10px;
+}
+
+.reservas input {
+  border: 0px;
+  height: 40px;
+  width: 100%;
+}
+
+/* class reserva submit */
+.reservas input[type="submit"] {
+  background-color: #8B704B;
+  color: #fff;
+  width: 100%;
+  margin-top: 10px;
 }
