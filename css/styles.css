@@ -1,3 +1,14 @@
+
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+:root {
+      --cor0: #A9302C;
+      --cor1: #4b7e8b;
+
+      --fonte-experiencia: 'Libre Baskerville', serif;
+}
 /* Estilos básicos para responsividade e acessibilidade */
 
 *{
@@ -37,6 +48,7 @@ body {
 
 h1 {
   font-family: 'Montserrat', sans-serif;
+ 
   color: #4b7e8b;
   font-size: 2rem;
 }
@@ -114,10 +126,21 @@ main img {
 }
 /* pagina principal - topico experiencia*/
 div.experiencia {
-  /* display: flex; */
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 70px;
+  /*display: block;*/
 }
-
+div.caixa-experiencia {
+  width: 500px;
+  height: 90px;
+  margin-left: 70px;
+}
+h1.h1-inicio {
+  font-family: var(--fonte-experiencia);
+  color: var(--cor0);
+  font-size: 30px;
+}
 footer {
   background-color: #f4f4f4;
   padding: 10px;
