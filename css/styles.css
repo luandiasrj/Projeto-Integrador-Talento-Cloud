@@ -131,11 +131,47 @@ div.experiencia {
   margin-right: 70px;
   /*display: block;*/
 }
-div.caixa-experiencia {
-  width: 500px;
-  height: 90px;
-  margin-left: 70px;
+div.experiencia-imagem {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 5px;
+  /*display: block;*/
 }
+
+div.caixa-experiencia {
+  width: 40vw;
+  height: 90vh;
+  margin-top: 30px;
+  margin-left: 70px;
+  margin-right: 10px;
+}
+div.reserva-whatsapp {
+  display: inline-flex;
+  justify-content:center;
+  margin-top: 50px;
+  background-color: aqua;
+}
+div.imagem-whatsapp {
+  width: 200px;
+  padding-right: 0px;
+  margin-right: 5px;
+}
+div.color-whats {
+  color: #8B704B;
+}
+
+img.imagem-1-exp {
+  width: 25vw;
+  height: 50vh;
+  margin-top: 60px;
+  margin-right: 10px;
+}
+
+img.imagem-2-exp {
+  width: 25vw;
+  height: 50vh;
+}
+
 h1.h1-inicio {
   font-family: var(--fonte-experiencia);
   color: var(--cor0);
