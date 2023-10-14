@@ -116,7 +116,7 @@ nav {
 }
 
 #imagemCabecalho {
-    background-image: url('/img/praia/header.jpg');
+    background-image: url('../img/praia/header.jpg');
     background-size: cover;
     background-position: center;
     position: fixed;
