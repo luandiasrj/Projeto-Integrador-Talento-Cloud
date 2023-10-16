@@ -29,17 +29,17 @@ Todas as páginas terão um tradutor para português, inglês e alemão.
 ## Sprints
 
 - [x] **Sprint 1:** Layout no Figma.
-- [ ] **Sprint 2:** Desenvolvimento de 5 páginas simples em HTML baseadas no layout do Figma.
-- [ ] **Sprint 3:** Implementação do CSS.
-- [ ] **Sprint 4:** Inclusão de JavaScript.
+- [x] **Sprint 2:** Desenvolvimento de 5 páginas simples em HTML baseadas no layout do Figma.
+- [x] **Sprint 3:** Implementação do CSS.
+- [x] **Sprint 4:** Inclusão de JavaScript.
 
 ## Checklist de To-Dos:
 
 - [x] Layout no Figma.
-- [ ] 5 páginas em HTML.
-- [ ] Implementação do CSS.
-- [ ] Inclusão de JavaScript.
-- [ ] Tradutor para as páginas.
+- [x] 5 páginas em HTML.
+- [x] Implementação do CSS.
+- [x] Inclusão de JavaScript.
+- [x] Tradutor para as páginas.
 - [ ] Integração com WhatsApp.
 - [ ] Sistema de reservas diretas pelo site.
 - [ ] Blog (opcional).

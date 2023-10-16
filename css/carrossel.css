@@ -1,0 +1,63 @@
+#carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0; /* Isso é necessário para o truque do padding funcionar corretamente */
+}
+
+
+#carousel-images, .image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity 1s ease-in-out;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* Isso garante que a imagem cubra todo o container, cortando qualquer excesso */
+}
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 32px;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+@media (max-width: 600px) {
+    #carousel-container {
+        border: none;
+        border-radius: 0;
+    }
+}
