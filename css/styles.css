@@ -231,6 +231,17 @@ div.caixa-infra {
   margin-left: 70px;
   margin-right: 10px;
 }
+img.imagem-1-infra {
+  width: 25vw;
+  height: 50vh;
+  margin-top: 40px;
+  margin-right: 10px;
+}
+img.imagem-2-infra {
+  width: 25vw;
+  height: 50vh;
+  margin-top: 40px;
+}
 footer {
   background-color: #f4f4f4;
   padding: 10px;
