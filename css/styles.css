@@ -8,6 +8,7 @@
       --cor2: #333333;
       --cor3: #C98343;
       --cor4: #6C757D;
+      --cor5: #4C5b4C;
 
       --fonte-experiencia: 'Libre Baskerville', serif;
       --fonte-experiencia2:'Roboto Slab', serif;
@@ -237,10 +238,24 @@ img.imagem-1-infra {
   margin-top: 40px;
   margin-right: 10px;
 }
+
+
+/*pagina principal - topico Servicos*/
+div.caixa-servicos {
+  width: 40vw;
+  height: 30vh;
+  margin-top: 30px;
+  margin-left: 70px;
+  margin-right: 10px;
+}
 img.imagem-2-infra {
   width: 25vw;
   height: 50vh;
   margin-top: 40px;
+}
+
+div.color-servicos {
+  color: var(--cor3);
 }
 footer {
   background-color: #f4f4f4;
