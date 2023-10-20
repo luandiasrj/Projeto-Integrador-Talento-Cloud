@@ -241,12 +241,30 @@ img.imagem-1-infra {
 
 
 /*pagina principal - topico Servicos*/
-div.caixa-servicos {
-  width: 40vw;
-  height: 30vh;
-  margin-top: 30px;
+
+div.servicos {
+  display: flex;
+  justify-content: space-between;
+  /*margin-right: 70px;*/
+  margin-top: 15px;
+  
   margin-left: 70px;
   margin-right: 10px;
+  
+}
+div.caixa-servicos {
+  width: 40vw;
+  height: 12vh;
+  margin-top: 5px;
+  margin-left: 70px;
+  margin-right: 10px;
+}
+
+h1.h1-serv2 {
+  font-family: var(--fonte-experiencia);
+  color: var(--cor0);
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 img.imagem-2-infra {
   width: 15vw;
@@ -259,15 +277,32 @@ div.color-servicos {
 }
 h1.h1-serv {
   font-family: var(--fonte-experiencia);
-  color: var(--cor0);
-  font-size: 30px;
+  color: var(--cor4);
+  font-size: 24px;
+  
   margin-bottom: -5px;
+
+}
+
+p.p-serv {
+  font-family: var(--fonte-experiencia2);
+  color: var(--cor2);
+  margin-top: 10px;
+
 }
 img.imagem-1-serv {
-  width: 10vw;
-  height: 15vh;
-  margin-top: 60px;
+  width: 5vw;
+  height: 10vh;
+  margin-top: 10px;
   margin-right: 10px;
+}
+
+div.bloco-serv {
+  width: 30vw;
+  height: 40vh;
+  padding: 20px 20px;
+  border: 0.5px solid #ddd;
+  border-radius: 10px;
 }
 footer {
   background-color: #f4f4f4;
