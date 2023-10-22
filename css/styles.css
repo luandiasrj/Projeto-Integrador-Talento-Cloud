@@ -304,6 +304,40 @@ div.bloco-serv {
   border: 0.5px solid #ddd;
   border-radius: 10px;
 }
+/*pagina principal - topico Depoimentos*/
+
+div.caixa-depoi {
+  width: 40vw;
+  height: 80vh;
+  margin-top: 5px;
+  margin-left: 70px;
+  margin-right: 10px;
+}
+
+h2.h2-depoi {
+  font-family: var(--fonte-experiencia2);
+  color: #ffff;
+  font-size: 20px;
+}
+section.imagem {
+  background-color: rgb(53, 53, 53);
+  color: white;
+  box-shadow: inset 6px 6px 13px rgba(0, 0, 0, 0.479);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+section.imagem > p {
+  display: inline-block;
+  padding: 5px;
+  /*faz uma caixa preta para compensar se parte da imagem for branca misturando c a letra de cor branca*/
+  background-color: rgba(0, 0, 0, 0.137);
+  text-shadow: 1px 1px 0px black;
+}
+section#img01 {
+  background-image: url(../img/praia/WhatsApp\ Image\ 2020-08-25\ at\ 17.30.31\ \(1\).jpeg);
+  background-position: right center;
+}
 footer {
   background-color: #f4f4f4;
   padding: 10px;
