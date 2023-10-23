@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 <li><a href="contato.html">Contato</a></li>
                 <li><a href="cafe.html">Café da Manhã</a></li>
                 <li><a href="acomodacoes.html">Acomodações</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                
             </ul>
         `;
         footerColumns.appendChild(secondCol);

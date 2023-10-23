@@ -9,6 +9,8 @@
       --cor3: #C98343;
       --cor4: #6C757D;
       --cor5: #4C5b4C;
+      --primary-color: #333;
+      --secondary-color: #f9f9f9;
 
       --fonte-experiencia: 'Libre Baskerville', serif;
       --fonte-experiencia2:'Roboto Slab', serif;
@@ -513,3 +515,50 @@ h2 {
   border: 10px solid #ffff;
   
 }
+
+footer {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  /* text-align: center; */
+  padding: 20px 0;
+}
+
+footer p,
+footer a {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+footer h3,
+a {
+  color: var(--secondary-color);
+  margin-top: 0px;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.footer-col {
+  flex: 1;
+  margin: 10px 15px;
+}
+
+.footer-col p {
+  margin-top: 0;
+}
+
+.footer-col ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-col li {
+  margin: 5px 0;
+}
+
+
