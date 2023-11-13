@@ -60,12 +60,12 @@
         <div class="coluna-50">
           
           <h1>Envie sua mensagem</h1>
-          <form action="" method="post">
-            <input type="text" name="nome" id="nome" placeholder="Nome:"><br><br>
-            <input type="email" name="email" id="email" placeholder="E-mail:"><br><br>
-            <input type="tel" name="telefone" id="telefone" placeholder="Telefone:"><br><br>
-            <input type="text" name="assunto" id="assunto" placeholder="Assunto:"><br><br>
-            <textarea name="" id="" cols="50" rows="10" placeholder="Mensagem:"></textarea><br><br>
+          <form id="form" action="" method="post">
+            <input type="text" name="nome" id="name" placeholder="Nome:" required><br><br>
+            <input type="email" name="email" id="email" placeholder="E-mail:" required><br><br>
+            <input type="tel" name="telefone" id="telefone" placeholder="Telefone:" required><br><br>
+            <input type="text" name="assunto" id="assunto" placeholder="Assunto:" required><br><br>
+            <textarea name="mensagem" id="mensagem" cols="50" rows="10" placeholder="Mensagem:" required></textarea><br><br>
             <input type="submit" value="Enviar">
           </form>
         </div>

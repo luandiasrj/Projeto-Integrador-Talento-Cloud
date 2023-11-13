@@ -444,6 +444,8 @@ h2 {
   text-decoration: solid;
 }
 
+
+
 /* tela menor que 600Px */
 @media (max-width: 600px) {
   main {
