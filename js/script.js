@@ -120,7 +120,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Adicionando o event listener para o evento de redimensionamento da janela
     window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768) {  // Se a largura da janela for maior ou igual a 768px
+        if (window.innerWidth >= 768) {
+            navList.classList.remove('nav-open');
+            menuIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+        }
+    });
+
+    // Adicionando event listener para o fechamento do menu ao clicar em um item do menu
+    navList.addEventListener('click', () => {
+        if (navList.classList.contains('nav-open')) {
             navList.classList.remove('nav-open');
             menuIcon.style.display = 'block';
             closeIcon.style.display = 'none';
@@ -152,9 +161,16 @@ let adultosLabel = document.querySelector('label[for="adultos"]');
 function gerenciarPopup(input, label) {
     input.addEventListener("focus", () => {
         label.classList.add("required-popup");
+        setTimeout(() => {
+            label.classList.add("visible");
+        }, 10); // Adiciona a classe 'visible' após um intervalo de 100 milissegundos (0.01 segundos)
     });
+
     input.addEventListener("blur", () => {
-        label.classList.remove("required-popup");
+        label.classList.remove("visible");
+        setTimeout(() => {
+            label.classList.remove("required-popup");
+        }, 10); // Remove a classe 'required-popup' após um intervalo de 100 milissegundos (0.01 segundos)
     });
 }
 
