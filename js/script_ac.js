@@ -39,6 +39,7 @@ open_menu.addEventListener('click', () => {
     logo.style.width = '250px'
     close_menu.style.display = 'block'
     licont.style.display = 'block'
+    body.style.overflow = 'hidden'
 
 
     for (var i = 0; i < listaItens.length; i++) {
@@ -64,6 +65,7 @@ close_menu.addEventListener('click', () => {
     open_menu.style.display = originalStyles.openMenuDisplay;
     logo.style.marginTop = originalStyles.logoMarginTop;
     logo.style.width = originalStyles.logoWidth;
+    body.style.overflow = 'visible'
 
     for (var i = 0; i < listaItens.length; i++) {
         listaItens[i].style.fontSize = ''; 
