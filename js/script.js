@@ -1,3 +1,8 @@
+
+// Função para verificar se a página já foi traduzida
+function isTranslated() {
+    return document.querySelector('.translated-notice') !== null;
+}
 // --- Constroi o footer ---
 window.addEventListener("DOMContentLoaded", (event) => {
     let footerColumns = document.querySelector(".footer-columns");
@@ -7,33 +12,24 @@ window.addEventListener("DOMContentLoaded", (event) => {
         let firstCol = document.createElement("div");
         firstCol.classList.add("footer-col");
         firstCol.innerHTML = `
- <p>Bem-vindo à Pousada Barra Grande no litoral sul da Bahia, em frente a uma das mais maravilhosas praias do Brasil: Taípu de Fora.<br></p>
- <div class="translator-dropdown">
- <span>Translate 🌐</span>
- <div class="translator-dropdown-content">
- ${isTranslated()
-                ? ""
-                : `<a href="https://translate.google.com/translate?hl=pt&sl=pt&tl=es&u=${encodeURIComponent(
-                    window.location.href
-                )}">🇪🇸 Español</a>`
-            }
- ${isTranslated()
-                ? ""
-                : `<a href="https://translate.google.com/translate?hl=pt&sl=pt&tl=en&u=${encodeURIComponent(
-                    window.location.href
-                )}">🇺🇸 English</a>`
-            }
- ${isTranslated()
-                ? ""
-                : `<a href="https://translate.google.com/translate?hl=pt&sl=pt&tl=de&u=${encodeURIComponent(
-                    window.location.href
-                )}">🇩🇪 Deutsch</a>`
-            }
- </div>
- </div>
- `;
+            <p>Bem-vindo à Pousada Barra Grande no litoral sul da Bahia, em frente a uma das mais maravilhosas praias do Brasil: Taípu de Fora.<br></p>
+            <div class="translator-dropdown">
+                <span>Translate 🌐</span>
+                <div class="translator-dropdown-content">
+                    ${isTranslated() ? '' : `<a href="https://translate.google.com/translate?hl=pt&sl=pt&tl=es&u=${encodeURIComponent(window.location.href)}">🇪🇸 Español</a>`}
+                    ${isTranslated() ? '' : `<a href="https://translate.google.com/translate?hl=pt&sl=pt&tl=en&u=${encodeURIComponent(window.location.href)}">🇺🇸 English</a>`}
+                    ${isTranslated() ? '' : `<a href="https://translate.google.com/translate?hl=pt&sl=pt&tl=de&u=${encodeURIComponent(window.location.href)}">🇩🇪 Deutsch</a>`}
+                </div>
+            </div>
+        `;
 
         footerColumns.appendChild(firstCol);
+
+        // Adiciona uma classe à página se ela foi traduzida
+        if (isTranslated()) {
+            document.body.classList.add('translated-notice');
+        }
+
 
         // Segunda coluna
         let secondCol = document.createElement("div");
@@ -65,10 +61,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
 });
 
-function isTranslated() {
-    // Verifica se o parâmetro 'u' está presente na URL
-    return window.location.href.includes("u=");
-}
 // -------
 
 // --- Carrossel de imagens ---
