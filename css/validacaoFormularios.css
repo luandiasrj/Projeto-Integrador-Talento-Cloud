@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #202020;
 }
 
 form {
@@ -50,11 +49,11 @@ button {
 /* ---------- Estilos dinâmicos ---------- */
 .required-popup::after {
   content: "*Campo obrigatório";
-  position: absolute;
-  top: 0;
-  right: 0;
-  max-height: 0px; /* Altura máxima desejada */
+  max-height: 0px;
   overflow: hidden;
+  position: absolute;
+  top: 100%;
+  right: 0;
   color: #dfdfdf;
   font-size: 0.65rem;
   padding: 0.2rem 0.3rem;
@@ -62,13 +61,13 @@ button {
   display: block;
   background-color: #505050;
   border-radius: 3px;
-  transform: translate(0,200%);
-  transition:  max-height 0.6s ease-in-out, transform 0.25s ease-in-out;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 
 .required-popup.visible::after {
-  max-height: 50px;
-  transform: translate(0, 0);
+  max-height: 100%;
+  transform: translate(0, -100%);
 }
 
 input.error {
