@@ -1,7 +1,5 @@
 @charset "UTF-8";
-
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto+Slab:wght@300&display=swap");
-
 :root {
   --primary-font: "Libre Baskerville", serif;
   --secondary-font: "Roboto Slab", serif;
@@ -13,34 +11,28 @@
   --h2-color: rgb(169, 48, 44);
   --h3-color: rgb(51, 51, 51);
 }
-
 body {
   font-family: var(--primary-font);
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
 }
-
 section {
   background-color: var(--secondary-color);
 }
-
 a {
   text-decoration: none;
 }
-
 h2 {
   color: var(--h2-color);
   font-family: var(--primary-font);
   font-size: 2em;
   margin-top: 0.25em;
 }
-
 p {
   font-family: var(--secondary-font);
   color: var(--h3-color);
 }
-
 header {
   background-color: var(--nav-background);
   color: var(--text-color);
@@ -48,15 +40,14 @@ header {
   width: 100%;
   top: 0;
   position: fixed;
+  z-index: 1;
 }
-
 .logo {
   font-size: 1.8vh;
   text-transform: uppercase;
   letter-spacing: 4px;
   font-family: var(--nav-font);
 }
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -64,7 +55,6 @@ nav {
   padding: 0 20px;
   height: 4vh;
 }
-
 .nav-list {
   list-style-type: none;
   padding: 0;
@@ -74,28 +64,20 @@ nav {
   font-family: var(--nav-font);
   letter-spacing: 2px;
 }
-
 .nav-list li {
-  /* display: none; */
-  /* Esconde os itens do menu por padrão */
-  margin: 0 10px;
-  /* Espaçamento entre os links */
-}
-
-/* Quando o menu está aberto, exiba os itens do menu com animação */
+  /* display: none; */ /* Esconde os itens do menu por padrão */
+  margin: 0 10px; /* Espaçamento entre os links */
+} /* Quando o menu está aberto, exiba os itens do menu com animação */
 .nav-open .nav-list li {
   display: block;
   opacity: 1;
   transform: translateY(0);
 }
-
 .nav-list li a,
 .logo {
   color: var(--text-color);
-  text-decoration: none;
-  /* Remove o sublinhado */
+  text-decoration: none; /* Remove o sublinhado */
 }
-
 .nav-open {
   display: flex;
   flex-direction: column;
@@ -110,21 +92,17 @@ nav {
   z-index: 9998;
   margin-top: 0px;
 }
-
 .mobile-menu {
   display: block;
   cursor: pointer;
   margin-left: auto;
   z-index: 9999;
 }
-
 .close-icon {
   font-size: x-large;
   color: var(--text-color);
   transition: transform 0.3s ease-in-out;
-}
-
-/* Inverte a rotação do ícone ao abrir o menu */
+} /* Inverte a rotação do ícone ao abrir o menu */
 .nav-list.nav-open .close-icon {
   transform: rotate(180deg);
 }
@@ -137,36 +115,29 @@ nav {
   left: 0;
   width: 100%;
   height: 35vh;
-  z-index: -1;
-  /* Para garantir que a imagem fique atrás de outros conteúdos */
+  z-index: -1; /* Para garantir que a imagem fique atrás de outros conteúdos */
 }
-
 section:nth-of-type(2) {
   background-color: var(--secondary-color);
   padding: 20px;
   position: relative;
   margin-top: 35vh;
 }
-
 footer {
   background-color: var(--primary-color);
-  color: var(--secondary-color);
-  /* text-align: center; */
+  color: var(--secondary-color); /* text-align: center; */
   padding: 20px 0;
 }
-
 footer p,
 footer a {
   color: var(--secondary-color);
   font-size: 0.9rem;
 }
-
 footer h3,
 a {
   color: var(--secondary-color);
   margin-top: 0px;
 }
-
 .footer-columns {
   display: flex;
   justify-content: space-between;
@@ -174,26 +145,20 @@ a {
   flex-wrap: wrap;
   padding: 20px;
 }
-
 .footer-col {
   flex: 1;
   margin: 10px 15px;
 }
-
 .footer-col p {
   margin-top: 0;
 }
-
 .footer-col ul {
   list-style-type: none;
   padding: 0;
 }
-
 .footer-col li {
   margin: 5px 0;
-}
-
-/* Estilos para o dropdown de tradução */
+} /* Estilos para o dropdown de tradução */
 .translator-dropdown {
   position: relative;
   display: inline-block;
@@ -201,34 +166,37 @@ a {
   margin: 5px;
   background: darkcyan;
   cursor: pointer;
+  transition: background-color 0.3s ease; /* Adicionando transição para a cor de fundo */
 }
-
+.translator-dropdown:hover {
+  background-color: #008080; /* Mudando a cor de fundo ao passar o mouse */
+}
 .translator-dropdown-content {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 120px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border: 1px solid #ddd;
+  transition: opacity 0.2s ease, visibility 0.3s ease, max-height 0.3s ease;
 }
-
 .translator-dropdown-content a {
   color: black;
   padding: 10px 12px;
   text-decoration: none;
   display: block;
 }
-
 .translator-dropdown-content a:hover {
   background-color: #f1f1f1;
 }
-
 .translator-dropdown:hover .translator-dropdown-content {
-  display: block;
-}
-
-/* Estilo usado na galeria de imagens */
+  visibility: visible;
+  opacity: 1;
+  max-height: 200px;
+} /* Estilo usado na galeria de imagens */
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
@@ -236,7 +204,6 @@ a {
   gap: 2vw;
   padding: 0 2vw;
 }
-
 .gallery-items {
   width: 340px;
   height: 340px;
@@ -245,40 +212,32 @@ a {
   flex-grow: 1;
   transition: transform 0.25s linear;
 }
-
 .gallery-items img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 .gallery-items:hover {
   transform: scale(1.025);
-}
-
-/* class reserva */
+} /* class reserva */
 .reservas {
   background-color: #fffee9;
   padding: 20px;
   width: fit-content;
   font-size: small;
-  margin: 10px auto;
+  margin: 10vh auto 4vh auto;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
-
 .reservas fieldset {
   border: 0px;
 }
-
 .reservas legend {
   font-size: large;
 }
-
 .reservas label {
   display: block;
   margin-top: 10px;
 }
-
 .reservas input,
 .reservas select {
   border: 1px solid lightgray;
@@ -286,62 +245,41 @@ a {
   width: 100%;
   border-radius: 5px;
 }
-
 .reservas select {
   width: 20%;
   text-align: center;
   background: white;
-}
-
-/* class reserva submit */
+} /* class reserva submit */
 .reservas input[type="submit"] {
   background-color: #8b704b;
   color: #fff;
   width: 100%;
   margin-top: 10px;
-}
-
-/* Adicionando regras para a animação do botão clicado */
+} /* Adicionando regras para a animação do botão clicado */
 .reservas input[type="submit"]:active {
   background-color: #8c704b; /* Mudar a cor de fundo quando o botão é clicado */
   transform: scale(0.97); /* Adicionando um efeito de escala */
-}
-
-/* Estilo para o menu responsivo */
-
+} /* Estilo para o menu responsivo sem javascript */
 @media (max-width: 767px) {
-  header {
-    z-index: 1;
-  }
-
   .footer-col {
     flex-basis: 100%;
     margin: 5px 0;
-  }
-
-  /* Estilo para o menu responsivo */
-
+  } /* Estilo para o menu responsivo */
   #menuToggle {
     display: block;
     position: relative;
-
     z-index: 1;
-
     -webkit-user-select: none;
     user-select: none;
   }
-
   #menuToggle a {
     text-decoration: none;
     color: #232323;
-
     transition: color 0.3s ease;
   }
-
   #menuToggle a:hover {
     color: tomato;
   }
-
   #menuToggle input {
     display: block;
     width: 40px;
@@ -349,105 +287,65 @@ a {
     position: absolute;
     top: -7px;
     left: -5px;
-
     cursor: pointer;
-
     opacity: 0; /* hide this */
     z-index: 2; /* and place it over the hamburger */
-
     -webkit-touch-callout: none;
-  }
-
-  /*
- * Just a quick hamburger
- */
+  } /* * Just a quick hamburger */
   #menuToggle span {
     display: block;
     width: 33px;
     height: 4px;
     margin-bottom: 5px;
     position: relative;
-
     background: #cdcdcd;
     border-radius: 3px;
-
     z-index: 1;
-
     transform-origin: 4px 0px;
-
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
       background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
   }
-
   #menuToggle span:first-child {
     transform-origin: 0% 0%;
   }
-
   #menuToggle span:nth-last-child(2) {
     transform-origin: 0% 100%;
-  }
-
-  /* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-
+  } /* * Transform all the slices of hamburger * into a crossmark. */
   #menuToggle input:checked ~ span {
     opacity: 1;
     transform: rotate(45deg) translate(-2px, -1px);
     background: #232323;
-  }
-
-  /*
- * But let's hide the middle one.
- */
+  } /* * But let's hide the middle one. */
   #menuToggle input:checked ~ span:nth-last-child(3) {
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
-  }
-
-  /*
- * Ohyeah and the last one should go the other direction
- */
+  } /* * Ohyeah and the last one should go the other direction */
   #menuToggle input:checked ~ span:nth-last-child(2) {
     transform: rotate(-45deg) translate(0, -1px);
-  }
-
-  /*
- * Make this absolute positioned
- * at the top left of the screen
- */
+  } /* * Make this absolute positioned * at the top left of the screen */
   #menu {
     position: fixed;
     width: 100%;
-
     padding-left: 0px;
     padding-top: 125px;
     background: #ededed;
     list-style-type: none;
-    -webkit-font-smoothing: antialiased;
-    /* transform-origin: 0% 0%; */
-    transform: translate(100%, 0);
+    -webkit-font-smoothing: antialiased; /* transform-origin: 0% 0%; */
+    transform: translate(-100%, 0);
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
     top: -2vh;
     left: -100%;
     height: 100%;
     text-align: center;
   }
-
   #menu li {
     padding: 10px 0;
     font-size: 22px;
-  }
-
-  /*
- * And let's slide it in from the left
- */
+  } /* * And let's slide it in from the left */
   #menuToggle input:checked ~ ul {
-    transform: none;
+    transform: translate(100%, 0);
   }
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -458,48 +356,29 @@ a {
     transform: translateX(0);
   }
 }
-
 @media (min-width: 768px) {
   .nav-list {
     flex-direction: row;
     justify-content: flex-end;
   }
-
   .nav-list li {
-    display: block;
-    /* Mostra os itens individuais do menu em resoluções maiores */
+    display: block; /* Mostra os itens individuais do menu em resoluções maiores */
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
   }
-
   .nav-list li:hover {
-    background-color: var(
-      --nav-background
-    ); /* Adicione a cor desejada ao fundo do item do menu no hover */
-  }
+    transform: scale(1.05);
+    text-shadow:  0 0 10px var(--text-color);
 
-  /* Estilo para o menu responsivo */
-
-  #menuToggle a {
-    text-decoration: none;
-    color: #232323;
-
-    transition: color 0.3s ease;
-  }
-
+  } /* Estilo para o menu responsivo */
   #menuToggle input {
     display: none;
-  }
-
-  /*
-   * Just a quick hamburger
-   */
+  } /* * Just a quick hamburger */
   #menuToggle span {
     display: none;
   }
-
   #menu {
     display: contents;
   }
-
   #menu li {
     padding: 10px 0;
     color: var(--text-color);

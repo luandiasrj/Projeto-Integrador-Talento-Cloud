@@ -51,8 +51,10 @@ button {
 .required-popup::after {
   content: "*Campo obrigatório";
   position: absolute;
-  top: 100%;
+  top: 0;
   right: 0;
+  max-height: 0px; /* Altura máxima desejada */
+  overflow: hidden;
   color: #dfdfdf;
   font-size: 0.65rem;
   padding: 0.2rem 0.3rem;
@@ -60,14 +62,13 @@ button {
   display: block;
   background-color: #505050;
   border-radius: 3px;
-  opacity: 0;
-  transform: translateY(0%);
-  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  transform: translate(0,200%);
+  transition:  max-height 0.6s ease-in-out, transform 0.25s ease-in-out;
 }
 
 .required-popup.visible::after {
-  opacity: 1;
-  transform: translateY(-100%);
+  max-height: 50px;
+  transform: translate(0, 0);
 }
 
 input.error {
