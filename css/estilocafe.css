@@ -16,6 +16,7 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  top: 0px !important; /* para esconder a barra do google tradutor */
 }
 section {
   background-color: var(--secondary-color);
@@ -67,7 +68,8 @@ nav {
 .nav-list li {
   /* display: none; */ /* Esconde os itens do menu por padrão */
   margin: 0 10px; /* Espaçamento entre os links */
-} /* Quando o menu está aberto, exiba os itens do menu com animação */
+}
+/* Quando o menu está aberto, exiba os itens do menu com animação */
 .nav-open .nav-list li {
   display: block;
   opacity: 1;
@@ -102,7 +104,8 @@ nav {
   font-size: x-large;
   color: var(--text-color);
   transition: transform 0.3s ease-in-out;
-} /* Inverte a rotação do ícone ao abrir o menu */
+}
+/* Inverte a rotação do ícone ao abrir o menu */
 .nav-list.nav-open .close-icon {
   transform: rotate(180deg);
 }
@@ -158,7 +161,8 @@ a {
 }
 .footer-col li {
   margin: 5px 0;
-} /* Estilos para o dropdown de tradução */
+}
+/* Estilos para o dropdown de tradução */
 .translator-dropdown {
   position: relative;
   display: inline-block;
@@ -196,7 +200,8 @@ a {
   visibility: visible;
   opacity: 1;
   max-height: 200px;
-} /* Estilo usado na galeria de imagens */
+}
+/* Estilo usado na galeria de imagens */
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
@@ -259,7 +264,85 @@ a {
 .reservas input[type="submit"]:active {
   background-color: #8c704b; /* Mudar a cor de fundo quando o botão é clicado */
   transform: scale(0.97); /* Adicionando um efeito de escala */
-} /* Estilo para o menu responsivo sem javascript */
+}
+
+/* Estilos para o google tradutor */
+
+/* [id=":0.container"] {
+  visibility: hidden !important;
+} */
+
+
+
+.ct-topbar {
+  text-align: right;
+  background: #eee;
+}
+.ct-topbar__list {
+  margin-bottom: 0px;
+}
+.ct-language__dropdown {
+  padding-top: 8px;
+  max-height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 110%;
+  left: -3px;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  width: 100px;
+  text-align: center;
+  padding-top: 0;
+  z-index: 200;
+}
+.ct-language__dropdown li {
+  background: #222;
+  padding: 5px;
+}
+.ct-language__dropdown li a {
+  display: block;
+}
+.ct-language__dropdown li:first-child {
+  padding-top: 10px;
+  border-radius: 3px 3px 0 0;
+}
+.ct-language__dropdown li:last-child {
+  padding-bottom: 10px;
+  border-radius: 0 0 3px 3px;
+}
+.ct-language__dropdown li:hover {
+  background: #444;
+}
+.ct-language__dropdown:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 8px;
+  height: 0;
+  border: 0 solid transparent;
+  border-right-width: 8px;
+  border-left-width: 8px;
+  border-bottom: 8px solid #222;
+}
+.ct-language {
+  position: relative;
+  background: #00aced;
+  color: #fff;
+  padding: 10px 0;
+}
+.ct-language:hover .ct-language__dropdown {
+  max-height: 200px;
+  padding-top: 8px;
+}
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+/* Estilo para telas pequenas */
 @media (max-width: 767px) {
   .footer-col {
     flex-basis: 100%;
@@ -356,6 +439,7 @@ a {
     transform: translateX(0);
   }
 }
+/* Estilo para telas maiores */
 @media (min-width: 768px) {
   .nav-list {
     flex-direction: row;
@@ -367,8 +451,7 @@ a {
   }
   .nav-list li:hover {
     transform: scale(1.05);
-    text-shadow:  0 0 10px var(--text-color);
-
+    text-shadow: 0 0 10px var(--text-color);
   } /* Estilo para o menu responsivo */
   #menuToggle input {
     display: none;

@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="css/estilocafe.css" />
     <link rel="stylesheet" href="css/carrossel.css" />
     <script src="js/script.js" defer></script>
+    <!-- Inclua isso no cabeçalho da sua página -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
   </head>
   <body>
     <header>
@@ -65,6 +68,73 @@
         </div>
       </section>
     </main>
+
+
+    <div class="ct-topbar">
+      <div class="container">
+      <ul class="list-unstyled list-inline ct-topbar__list">
+        <li class="ct-language">Language <i class="fa fa-arrow-down"></i>
+        <ul class="list-unstyled ct-language__dropdown">
+          <li><a href="#googtrans(pt-br|en)" class="lang-en lang-select" data-lang="en"><img src="https://www.solodev.com/assets/google-translate/flag-usa.png" alt="USA"></a></li>
+          <li><a href="#googtrans(pt-br|es)" class="lang-es lang-select" data-lang="es"><img src="https://www.solodev.com/assets/google-translate/flag-mexico.png" alt="MEXICO"></a></li>
+          <li><a href="#googtrans(pt-br|fr)" class="lang-es lang-select" data-lang="fr"><img src="https://www.solodev.com/assets/google-translate/flag-france.png" alt="FRANCE"></a></li>
+          <li><a href="#googtrans(pt-br|zh-CN)" class="lang-es lang-select" data-lang="zh-CN"><img src="https://www.solodev.com/assets/google-translate/flag-china.png" alt="CHINA"></a></li>
+          <li><a href="#googtrans(pt-br|ja)" class="lang-es lang-select" data-lang="ja"><img src="https://www.solodev.com/assets/google-translate/flag-japan.png" alt="JAPAN"></a></li>
+        </ul>
+        </li>
+      </ul>
+      </div>
+    </div>
+
     <footer class="footer-columns"></footer>
+
+    <div id="google_translate_element"></div>
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "pt-br",
+            autoDisplay: "true",
+            includedLanguages: "en,fr,de,es",
+            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+    
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>  -->
+
+    <!-- 
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'pt-br', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
+      }
+  
+    function triggerHtmlEvent(element, eventName) {
+      var event;
+      if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+      } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+      }
+    }
+  
+    jQuery('.lang-select').click(function() {
+      var theLang = jQuery(this).attr('data-lang');
+      jQuery('.goog-te-combo').val(theLang);
+  
+      //alert(jQuery(this).attr('href'));
+      window.location = jQuery(this).attr('href');
+      location.reload();
+  
+    });
+    </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
   </body>
 </html>
