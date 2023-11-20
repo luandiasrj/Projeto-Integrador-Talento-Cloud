@@ -1,0 +1,214 @@
+--criacao tabela hospede
+
+create table hospede (
+  id_hospede SERIAL primary key,
+  nome varchar(30) not NULL,
+  CPF INT NOT NULL,
+  email varchar(20) NOT NULL,
+  telefone varchar(15) NOT NULL,
+  data_nascimento DATE
+  )
+
+--Popular tabela hospede
+
+INSERT INTO hospede(nome, cpf, email, telefone, data_nascimento)
+VALUES ('Fagner', 12345, 'fagner@hotmail.com', '51 1234-5678', '1998-02-14')
+
+SELECT * from hospede
+
+INSERT INTO hospede(nome, cpf, email, telefone, data_nascimento)
+VALUES ('Aloisio', 67895, 'aloisio@hotmail.com', '11 5899-5678', '1990-02-18'),
+	('Vera', 467905, 'verao@gmail.com', '11 5899-8878', '1980-07-18'),
+    ('Maria', 48745905, 'mariag@gmail.com', '33 2369-8878', '1977-06-2')
+
+
+--Criacao da tabela de tipo quarto---
+
+create table tipo_quarto(
+  
+  codigo_tipo_quarto_or serial PRIMARY KEY,
+  descricao_tipo_quarto varchar(15) not NULL
+     
+  )
+  
+-Popular da tabela de tipo quarto---
+
+INSERT INTO tipo_quarto (descricao_tipo_quarto)
+VALUES ('duplo'),
+       ('triplo')
+
+SELECT * from tipo_quarto
+
+---
+
+--Criacao da tabela de status do quarto---
+
+create table status_quarto(
+  
+  codigo_status_quarto_or serial PRIMARY KEY,
+  descricao_status_quarto varchar(15) not NULL
+     
+  )
+  
+-Popular da tabela de tipo quarto---
+
+INSERT INTO status_quarto (descricao_status_quarto)
+VALUES ('disponivel'),
+       ('indisponivel')
+
+SELECT * from status_quarto
+
+---
+
+--Criacao da tabela de status reserva do quarto---
+
+create table status_reserva(
+  
+  codigo_status_reserva_quarto_or serial PRIMARY KEY,
+  descricao_status_reserva_quarto varchar(15) not NULL
+     
+  )
+  
+-Popular da tabela de tipo quarto---
+
+INSERT INTO status_reserva (descricao_status_reserva_quarto)
+VALUES ('confirmada'),
+       ('nao confirmada'),
+       ('cancelada')
+
+SELECT * from status_reserva
+
+---
+
+--Criacao da tabela de forma pagamento---
+
+create table forma_pagamento(
+  
+  codigo_forma_pagamento_or serial PRIMARY KEY,
+  descricao_forma_pagamento varchar(15) not NULL
+     
+  )
+  
+-Popular da tabela de forma pagamento---
+
+INSERT INTO forma_pagamento (descricao_forma_pagamento)
+VALUES ('cartao debito'),
+       ('cartao credito'),
+       ('PIX'),
+       ('dinheiro')
+
+SELECT * from forma_pagamento
+
+
+
+
+--Criacao da tabela da disponibilidade do quarto
+
+create table quartodisponivelv3(
+  numero_quarto INT not NULL,
+  tipo_quarto int not NULL,
+  data_disponivel_reserva DATE not NULL,
+  status_quarto INT not NULL,
+  cama_casal BOOLEAN,   
+  CONSTRAINT pk_num_data PRIMARY key (numero_quarto, data_disponivel_reserva)
+  )
+  
+  --Popular tabela da disponibilidade do quartovalorquartov2
+  
+INSERT INTO quartodisponivelv3(numero_quarto, tipo_quarto, data_disponivel_reserva, status_quarto, cama_casal)
+	VALUES (1,1, '2023-11-30', 1, TRUE)
+
+SELECT * from quartodisponivelv3
+
+INSERT INTO quartodisponivelv3(numero_quarto, tipo_quarto, data_disponivel_reserva, status_quarto, cama_casal)
+	VALUES (1,1, '2023-11-29', 2, TRUE),
+    		(2,1, '2023-11-29', 1, TRUE),
+            (3,1, '2023-11-30', 1, FALSE)
+            
+INSERT INTO quartodisponivelv3(numero_quarto, tipo_quarto, data_disponivel_reserva, status_quarto, cama_casal)
+	VALUES (1,1, '2023-12-01', 1, TRUE)            
+
+--chaves estrangeiras
+
+ALTER TABLE quartodisponivelv3
+	ADD CONSTRAINT fk_tipo_quarto FOREIGN KEY (tipo_quarto) REFERENCES 
+    	tipo_quarto(codigo_tipo_quarto_or)
+    
+ALTER TABLE quartodisponivelv3
+	ADD CONSTRAINT fk_status_quarto FOREIGN KEY (status_quarto) REFERENCES 
+    	status_quarto(codigo_status_quarto_or)  
+    
+
+--Criacao da tabela do valor do quarto
+
+create table valorquartov3 (
+  quarto_tipo INT not NULL,
+  data_reserva_disponivel DATE not NULL,
+  reembolsavel BOOLEAN,
+  valor_reserva FLOAT not NULL,
+  CONSTRAINT pk_tipoquarto_data_disponivel PRIMARY key (quarto_tipo, data_reserva_disponivel)
+  )
+  
+--Popular tabela do valor do quarto
+
+INSERT INTO valorquartov3(quarto_tipo, data_reserva_disponivel, reembolsavel, valor_reserva)
+VALUES (1, '2023-11-30',  FALSE, 300),
+		(1, '2023-12-01',  FALSE, 300)
+        
+SELECT * from valorquartov3
+
+INSERT INTO valorquartov3(quarto_tipo, data_reserva_disponivel, reembolsavel, valor_reserva)
+VALUES (2, '2023-11-30',  FALSE, 400),
+		(2, '2023-12-01',  FALSE, 400)
+        
+--chave estrangeira
+
+ALTER TABLE valorquartov3
+	ADD CONSTRAINT fk_valor_quarto FOREIGN KEY (quarto_tipo) REFERENCES 
+    	tipo_quarto(codigo_tipo_quarto_or)
+
+
+
+--Criacao da tabela dados da reserva
+
+create table dadosreserva (
+
+  Id_reserva serial PRIMARY KEY,
+  hospede_id INT not NULL,
+  Quarto_id Varchar(3) NOT NULL,
+  data_inicial_reserva DATE not NULL,
+  data_final_reserva DATE not NULL,
+  data_reserva_realizada DATE not NULL,
+  quantidade_diarias int not null, 
+  valor_reserva FLOAT not NULL,
+  valor_desconto FLOAT,
+  status_reserva int NOT null,
+  pagamento_confirmado BOOLEAN,
+  Forma_pagamento int NOT NULL
+  
+  )
+  
+  --Popular tabela dados da reserva
+
+INSERT INTO dadosreserva(hospede_id , Quarto_id, data_inicial_reserva, data_final_reserva, 
+          data_reserva_realizada, quantidade_diarias, valor_reserva, valor_desconto,
+                        status_reserva, pagamento_confirmado, Forma_pagamento)
+VALUES (1, 1, '2023-11-30', '2023-12-01', '2023-11-20', 2, 600, 0, 1, TRUE, 3)
+
+SELECT * from dadosreserva
+
+--chave estrangeira
+
+ALTER TABLE dadosreserva
+	ADD CONSTRAINT fk_hospede FOREIGN KEY (hospede_id) REFERENCES 
+    	hospede(id_hospede)
+        
+ALTER TABLE dadosreserva
+	ADD CONSTRAINT fk_status_reserva FOREIGN KEY (status_reserva) REFERENCES 
+    	status_reserva(codigo_status_reserva_quarto_or)      
+        
+ALTER TABLE dadosreserva
+	ADD CONSTRAINT fk_forma_pagamento FOREIGN KEY (forma_pagamento) REFERENCES 
+    	forma_pagamento(codigo_forma_pagamento_or)
+
+
