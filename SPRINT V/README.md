@@ -95,7 +95,7 @@ erDiagram
 
 ### Criação das Tabelas
 
-```postgresql
+```sql
 -- 5. Tipo de Quarto
 CREATE TABLE Tipo_Quarto (
     Id_tipo_quarto SERIAL PRIMARY KEY,
@@ -174,7 +174,7 @@ CREATE TABLE Dados_Reserva (
 
 ### Informações de teste
 
-```postgresql
+```sql
 -- Adicionando dados à tabela Tipo_Quarto
 INSERT INTO Tipo_Quarto (Descricao_tipo_quarto) VALUES
     ('Single'),
@@ -247,7 +247,7 @@ SELECT * FROM Dados_Reserva  -- Vefica se foi inserido
 
 ### Consultas simples e consultas com juncões
 
-```postgresql
+```sql
 -- Listar todos os quartos com cama de casal disponíveis:
 SELECT * FROM Quarto_Disponivel WHERE Cama_casal = TRUE AND Status_quarto = 1;
 
