@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/estilocafe.css" />
     <link rel="stylesheet" href="css/validacaoFormularios.css" />
     <script src="js/script.js" defer></script>
+    <script src="js/formulario.js" defer></script>
   </head>
   <body>
     <header>
@@ -25,12 +26,13 @@
         </div>
       </nav>
     </header>
-    <main></main>
-    <section class="reservas">
+    <main>
+      <section id="imagemCabecalho"></section>
+    <section id="breakfast">
       <!-- Formulário de Reservas -->
-      <form action="/reserva_page.php" method="post">
+      <form action="/reserva_page.php" method="post" class="reservas">
         <fieldset>
-          <legend>Reservas</legend>
+          <legend><h1>Reservas</h1></legend>
           <label for="nome">Nome:</label>
           <input type="text" id="nome" name="nome" /><br />
           <p id="nome-helper" class="helper-text">Mensagem de ajuda</p>

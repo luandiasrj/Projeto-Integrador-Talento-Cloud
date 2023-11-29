@@ -11,6 +11,21 @@
   --text-color: white;
   --h2-color: rgb(169, 48, 44);
   --h3-color: rgb(51, 51, 51);
+
+  /* ---------------------------------------------------------------- */
+  --cor0: #a9302c;
+  --cor1: #4b7e8b;
+  --cor2: #333333;
+  --cor3: #c98343;
+  --cor4: #6c757d;
+  --cor5: #4c5b4c;
+  --primary-color: #333;
+  --secondary-color: #f9f9f9;
+
+  --fonte-experiencia: "Libre Baskerville", serif;
+  --fonte-experiencia2: "Roboto Slab", serif;
+
+  /* ---------------------------------------------------------------- */
 }
 
 body {
@@ -30,11 +45,16 @@ a {
   text-decoration: none;
 }
 
-h2 {
-  color: var(--h2-color);
+h1 {
   font-family: var(--primary-font);
-  font-size: 2em;
-  margin-top: 0.25em;
+  color: #4b7e8b;
+  font-size: 2rem;
+}
+
+h2 {
+  color: #4b7e8b;
+  margin: 0;
+  padding: 0;
 }
 
 p {
@@ -142,6 +162,7 @@ nav {
   height: 35vh;
   z-index: -1;
   /* Para garantir que a imagem fique atrás de outros conteúdos */
+  filter: blur(4px);
 }
 
 section:nth-of-type(2) {
@@ -227,11 +248,9 @@ a {
 /* class reserva */
 .reservas {
   background-color: #fffee9;
-  padding: 20px;
-  width: fit-content;
   font-size: small;
-  margin: 10vh auto 4vh auto;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  margin: auto;
 }
 
 .reservas fieldset {
@@ -277,6 +296,160 @@ a {
   /* Adicionando um efeito de escala */
 }
 
+/* ---------------------------------------------------------------- */
+/* class contato */
+.linha {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2vw;
+  padding: 0 2vw;
+}
+
+.coluna-50 {
+  width: 340px;
+  flex-grow: 1;
+}
+
+.fale_conosco {
+  margin-bottom: 50px;
+  padding: auto;
+  text-decoration: solid;
+}
+
+.contato input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  position: relative;
+  height: 35px;
+  border: none;
+  border-bottom-color: currentcolor;
+  border-bottom-style: none;
+  border-bottom-width: medium;
+  border-radius: 2px;
+  border-bottom: 2px solid #4b7e8b;
+  margin-bottom: 25px;
+  font-family: var(--secondary-font);
+  padding: 0 10px;
+}
+
+.contato textarea {
+  width: 90%;
+  padding: 15px;
+}
+
+/* class página inicial */
+
+h1.h1-inicio {
+  font-family: var(--fonte-experiencia);
+  color: var(--cor0);
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+p.p-inicio {
+  font-family: var(--primary-font);
+  color: var(--primary-color);
+}
+
+div.reserva-whatsapp {
+  margin-top: 40px;
+  height: 55px;
+}
+
+div.reserva-whatsapp img {
+  height: 100%;
+  /* Alinha componentes ao lado direito da imagem */
+  float: left;
+  margin-right: 20px;
+}
+
+p.p-whats {
+  font-family: var(--fonte-experiencia2);
+  color: var(--cor3);
+}
+
+div.imagem-whatsapp {
+  width: 200px;
+  height: 55px;
+  padding-right: 0px;
+  margin-right: -130px;
+}
+
+.imagems-exp {
+  gap: 1vw;
+}
+
+img.imagem-1-exp {
+  width: 40%;
+  margin-top: 60px;
+  border: none;
+  box-shadow: none;
+  object-fit: cover;
+}
+
+img.imagem-2-exp {
+  width: 40%;
+  border: none;
+  box-shadow: none;
+  object-fit: cover;
+}
+
+section.caixa-acomodacoes {
+  background-color: #eaebec;
+  padding: 20px;
+  position: relative;
+}
+
+section.caixa-acomodacoes h1 {
+  margin-left: 20px;
+}
+
+section.caixa-acomodacoes div.gallery-container img.gallery-items {
+  width: 25%;
+  height: auto;
+  object-fit: cover;
+}
+
+section.caixa-infra {
+  background-color: #6c757d;
+  padding: 20px;
+}
+
+section#img01 {
+  background-image: url(../img/praia/WhatsApp\Image\2020-08-25\at\17.30.31\\(
+ 1\
+).jpeg);
+  background-position: right center;
+  padding: 20px;
+  height: 450px;
+  background-attachment: fixed;
+}
+
+h2.h2-depoi {
+  font-family: var(--fonte-experiencia2);
+  color: #ffff;
+  font-size: 20px;
+}
+
+h1.h1-serv2 {
+  font-family: var(--fonte-experiencia);
+  color: var(--cor0);
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+section#img01 h3 {
+  color: white;
+}
+
+section#img01 p {
+  color: white;
+}
+
+/* ---------------------------------------------------------------- */
 /* Estilos para o google tradutor */
 .skiptranslate,
 #google_translate_element {
@@ -366,12 +539,8 @@ a {
     margin: 5px 0;
   }
 
-  .reservas {
-    padding: 0px;
-  }
-
   form {
-    width: auto !important;
+    max-width: 100% !important;
   }
 
   #menuToggle {
@@ -428,18 +597,18 @@ a {
     transform-origin: 0% 100%;
   }
 
-  #menuToggle input:checked ~ span {
+  #menuToggle input:checked~span {
     opacity: 1;
     transform: rotate(45deg) translate(6px, -1px);
     background: #232323;
   }
 
-  #menuToggle input:checked ~ span:nth-last-child(3) {
+  #menuToggle input:checked~span:nth-last-child(3) {
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
   }
 
-  #menuToggle input:checked ~ span:nth-last-child(2) {
+  #menuToggle input:checked~span:nth-last-child(2) {
     transform: rotate(-45deg) translate(0px, 6px);
   }
 
@@ -465,7 +634,7 @@ a {
     font-size: 22px;
   }
 
-  #menuToggle input:checked ~ ul {
+  #menuToggle input:checked~ul {
     transform: translate(100%, 0);
   }
 }
