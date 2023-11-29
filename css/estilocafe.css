@@ -5,7 +5,7 @@
   --primary-font: "Libre Baskerville", serif;
   --secondary-font: "Roboto Slab", serif;
   --nav-font: "Segoe UI", "Open Sans", "Helvetica Neue", sans-serif;
-  --nav-background: rgb(75, 126, 139);
+  --nav-background: #4a7f8c;
   --primary-color: #333;
   --secondary-color: #f9f9f9;
   --text-color: white;
@@ -13,18 +13,8 @@
   --h3-color: rgb(51, 51, 51);
 
   /* ---------------------------------------------------------------- */
-  --cor0: #a9302c;
-  --cor1: #4b7e8b;
-  --cor2: #333333;
   --cor3: #c98343;
   --cor4: #6c757d;
-  --cor5: #4c5b4c;
-  --primary-color: #333;
-  --secondary-color: #f9f9f9;
-
-  --fonte-experiencia: "Libre Baskerville", serif;
-  --fonte-experiencia2: "Roboto Slab", serif;
-
   /* ---------------------------------------------------------------- */
 }
 
@@ -160,13 +150,13 @@ nav {
   left: 0;
   width: 100%;
   height: 35vh;
-  z-index: -1;
   /* Para garantir que a imagem fique atrás de outros conteúdos */
+  z-index: -1;
   filter: blur(4px);
 }
 
 section:nth-of-type(2) {
-  background-color: var(--secondary-color);
+  background-color: white;
   padding: 20px;
   position: relative;
   margin-top: 35vh;
@@ -217,6 +207,12 @@ a {
   margin: 5px 0;
 }
 
+.octicon.octicon-mark-github {
+  fill: var(--secondary-color);
+  float: left;
+  margin-right: 5px;
+}
+
 /* Estilo usado na galeria de imagens */
 .gallery-container {
   display: flex;
@@ -233,6 +229,7 @@ a {
   box-shadow: 5px 5px 5px #0006;
   flex-grow: 1;
   transition: transform 0.25s linear;
+  object-fit: cover;
 }
 
 .gallery-items img {
@@ -313,23 +310,14 @@ a {
 
 .fale_conosco {
   margin-bottom: 50px;
-  padding: auto;
-  text-decoration: solid;
+  text-decoration: none;
 }
 
 .contato input {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 70%;
-  position: relative;
   height: 35px;
   border: none;
-  border-bottom-color: currentcolor;
-  border-bottom-style: none;
-  border-bottom-width: medium;
-  border-radius: 2px;
-  border-bottom: 2px solid #4b7e8b;
+  border-bottom: 2px solid var(--nav-background);
   margin-bottom: 25px;
   font-family: var(--secondary-font);
   padding: 0 10px;
@@ -341,37 +329,47 @@ a {
 }
 
 /* class página inicial */
+.h1-inicio,
+.p-inicio {
+  font-family: var(--primary-font);
+}
 
-h1.h1-inicio {
-  font-family: var(--fonte-experiencia);
-  color: var(--cor0);
+.h1-inicio {
+  color: var(--h2-color);
   font-size: 30px;
   margin-bottom: 10px;
 }
 
-p.p-inicio {
-  font-family: var(--primary-font);
+.p-inicio {
   color: var(--primary-color);
 }
 
-div.reserva-whatsapp {
-  margin-top: 40px;
-  height: 55px;
+.color-whats {
+  width: fit-content;
+  display: block;
 }
 
-div.reserva-whatsapp img {
-  height: 100%;
-  /* Alinha componentes ao lado direito da imagem */
+.reserva-whatsapp {
+  margin: 30px;
+  height: 55px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.reserva-whatsapp img {
   float: left;
   margin-right: 20px;
+  width: auto;
 }
 
-p.p-whats {
-  font-family: var(--fonte-experiencia2);
+.p-whats {
+  font-family: var(--secondary-font);
   color: var(--cor3);
+  line-height: 0.5em;
 }
 
-div.imagem-whatsapp {
+.imagem-whatsapp {
   width: 200px;
   height: 55px;
   padding-right: 0px;
@@ -379,74 +377,109 @@ div.imagem-whatsapp {
 }
 
 .imagems-exp {
-  gap: 1vw;
+  padding: 0px;
 }
 
-img.imagem-1-exp {
+.imagems-exp img {
   width: 40%;
+  border: none;
+  box-shadow: none;
+  object-fit: cover;
+}
+
+.imagems-exp .imagem-1-exp {
   margin-top: 60px;
-  border: none;
-  box-shadow: none;
-  object-fit: cover;
 }
 
-img.imagem-2-exp {
-  width: 40%;
-  border: none;
-  box-shadow: none;
-  object-fit: cover;
-}
-
-section.caixa-acomodacoes {
-  background-color: #eaebec;
+.caixa-acomodacoes,
+.caixa-infra,
+.caixa-servicos {
   padding: 20px;
-  position: relative;
 }
 
-section.caixa-acomodacoes h1 {
+.caixa-acomodacoes,
+.caixa-infra {
+  background-color: whitesmoke;
+}
+
+.caixa-acomodacoes h1 {
   margin-left: 20px;
 }
 
-section.caixa-acomodacoes div.gallery-container img.gallery-items {
-  width: 25%;
-  height: auto;
-  object-fit: cover;
-}
-
-section.caixa-infra {
+.caixa-infra {
   background-color: #6c757d;
-  padding: 20px;
 }
 
-section#img01 {
-  background-image: url(../img/praia/WhatsApp\Image\2020-08-25\at\17.30.31\\(
- 1\
-).jpeg);
-  background-position: right center;
+.caixa-infra h1,
+.caixa-infra p {
+  color: var(--secondary-color);
+}
+
+.caixa-infra div.linha div.coluna-50 div.reserva-whatsapp {
+  background-color: #00c298;
+  margin: 30px 0px;
+  width: 250px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.caixa-infra div.linha div.coluna-50 div.reserva-whatsapp .p-whats {
+  line-height: 0.5em;
+}
+
+#img01 {
+  background-image: url("../img/praia/WhatsApp Image 2020-08-25 at 17.30.31 (1).jpeg");
+  background-position: center;
   padding: 20px;
   height: 450px;
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-h2.h2-depoi {
-  font-family: var(--fonte-experiencia2);
+.h2-depoi,
+.h1-serv2,
+#img01 h3,
+#img01 p {
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+.h2-depoi {
+  font-family: var(--secondary-font);
   color: #ffff;
   font-size: 20px;
 }
 
-h1.h1-serv2 {
-  font-family: var(--fonte-experiencia);
-  color: var(--cor0);
+.h1-serv2 {
+  font-family: var(--primary-font);
+  color: orange;
   font-size: 30px;
   margin-bottom: 10px;
 }
 
-section#img01 h3 {
-  color: white;
+.card {
+  background-color: white;
+  width: 25%;
+  box-shadow: 0px 5px 5px #0006;
+  flex-grow: 1;
+  padding: 20px;
+  border: 0.5px solid #ddd;
+  border-radius: 10px;
+  min-width: min-content;
 }
 
-section#img01 p {
-  color: white;
+.card img {
+  max-width: 25%;
+  width: 100px;
+}
+
+.h1-serv {
+  font-family: var(--primary-font);
+  color: var(--cor4);
+  font-size: 24px;
+  margin-bottom: -5px;
+  margin-left: 0px !important;
 }
 
 /* ---------------------------------------------------------------- */
@@ -559,7 +592,7 @@ section#img01 p {
   }
 
   #menuToggle a:hover {
-    color: tomato;
+    color: var(--cor3);
   }
 
   #menuToggle input {
@@ -597,18 +630,18 @@ section#img01 p {
     transform-origin: 0% 100%;
   }
 
-  #menuToggle input:checked~span {
+  #menuToggle input:checked ~ span {
     opacity: 1;
     transform: rotate(45deg) translate(6px, -1px);
     background: #232323;
   }
 
-  #menuToggle input:checked~span:nth-last-child(3) {
+  #menuToggle input:checked ~ span:nth-last-child(3) {
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
   }
 
-  #menuToggle input:checked~span:nth-last-child(2) {
+  #menuToggle input:checked ~ span:nth-last-child(2) {
     transform: rotate(-45deg) translate(0px, 6px);
   }
 
@@ -634,7 +667,7 @@ section#img01 p {
     font-size: 22px;
   }
 
-  #menuToggle input:checked~ul {
+  #menuToggle input:checked ~ ul {
     transform: translate(100%, 0);
   }
 }
